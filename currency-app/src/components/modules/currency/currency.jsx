@@ -62,7 +62,7 @@ export default function Currency() {
             <div
               key={item.label}
               className={styles.textStyle()}
-              style={{ fontWeight: "bold", backgroundColor: "yellow" }}
+              style={{ fontWeight: "bold" }}
             >
               {item.label}
             </div>
@@ -84,10 +84,10 @@ export default function Currency() {
           );
         })}
       <div
-        style={{ marginTop: 30, textAlign: "center" }}
+        style={{ marginTop: 30, textAlign: "center", color: "white" }}
       >{`Rates are based from 1 USD`}</div>
       <div
-        style={{ marginTop: 2, textAlign: "center" }}
+        style={{ marginTop: 2, textAlign: "center", color: "white" }}
       >{`This application uses API from https://currencyfreaks.com `}</div>
     </div>
   );
@@ -107,10 +107,12 @@ const styles = {
     flexDirection: "row",
   }),
   textStyle: css({
+    color: "white",
     textAlign: "center",
     justifyContent: "center",
     display: "flex",
-    paddingTop: 8,
+    paddingTop: 4,
+    paddingBottom: 4,
     flex: 1,
     border: "1px solid black",
   }),
