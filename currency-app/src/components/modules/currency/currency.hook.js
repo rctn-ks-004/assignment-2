@@ -24,5 +24,5 @@ export const useCurrencies = () => {
     }
   }, [currency, setLoading]);
 
-  return { currency, setCurrency, loading, setLoading };
+  return { currency, loading };
 };
