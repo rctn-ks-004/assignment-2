@@ -36,23 +36,7 @@ export default function Currency() {
       label: "GBP",
     },
   ];
-  const { currency, setCurrency } = useCurrencies();
-
-  React.useEffect(() => {
-    if (!currency) {
-      fetch(
-        "https://api.currencyfreaks.com/latest?apikey=8fe8e6f2225844db8677ad4e9cf31607"
-      )
-        .then((res) => {
-          res.json().then((data) => {
-            setCurrency(data);
-          });
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }, [currency, setCurrency]);
+  const { currency, loading } = useCurrencies();
 
   return (
     <div className={styles.container()}>
@@ -69,20 +53,28 @@ export default function Currency() {
           );
         })}
       </div>
-      {currency &&
-        rates.map((item) => {
-          const buy = (currency.rates[item.label] * 105) / 100;
-          const rateNow = currency.rates[item.label] * 1;
-          const sell = (currency.rates[item.label] * 95) / 100;
-          return (
+      {loading
+        ? rates.map((item) => (
             <div key={item.label} className={styles.rowFlex()}>
-              <div className={styles.textStyle()}>{item.label}</div>
-              <div className={styles.textStyle()}>{buy.toFixed(4)}</div>
-              <div className={styles.textStyle()}>{rateNow.toFixed(4)} </div>
-              <div className={styles.textStyle()}>{sell.toFixed(4)} </div>
+              <div className={styles.textLoading()} />
+              <div className={styles.textLoading()} />
+              <div className={styles.textLoading()} />
+              <div className={styles.textLoading()} />
             </div>
-          );
-        })}
+          ))
+        : rates.map((item) => {
+            const buy = (currency?.rates[item.label] * 105) / 100;
+            const rateNow = currency?.rates[item.label] * 1;
+            const sell = (currency?.rates[item.label] * 95) / 100;
+            return (
+              <div key={item.label} className={styles.rowFlex()}>
+                <div className={styles.textStyle()}>{item.label}</div>
+                <div className={styles.textStyle()}>{buy.toFixed(4)}</div>
+                <div className={styles.textStyle()}>{rateNow.toFixed(4)} </div>
+                <div className={styles.textStyle()}>{sell.toFixed(4)} </div>
+              </div>
+            );
+          })}
       <div
         style={{ marginTop: 30, textAlign: "center", color: "white" }}
       >{`Rates are based from 1 USD`}</div>
@@ -115,5 +107,15 @@ const styles = {
     paddingBottom: 4,
     flex: 1,
     border: "1px solid black",
+  }),
+  textLoading: css({
+    color: "white",
+    textAlign: "center",
+    justifyContent: "center",
+    display: "flex",
+    height: 26,
+    flex: 1,
+    border: "1px solid black",
+    backgroundColor: "grey",
   }),
 };
