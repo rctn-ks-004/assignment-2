@@ -1,0 +1,16 @@
+.wraper_Home{
+    font-size: 30px;
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    font-weight: lighter;
+   
+}
