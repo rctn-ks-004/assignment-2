@@ -17,15 +17,17 @@ const index = () => {
       fetchPosts();
     }, []);
   
+    
+   
   return (
-    <div>
+    <div className='home'>
         <div className='wraper_Home'>
         <div className='header'>Currency</div>
         <div className='header'>We Buy</div>
         <div className='header'>Exchange rate</div>
         <div className='header'>We Sell</div>
         </div>
-        {count.rates && Object.keys(count.rates).map((key, index) => {
+        {count.rates && Object.keys(count.rates).filter((item)=> item === "IDR" || item === "CAD" || item === "JPY"  || item === "EUR" || item === "GBP").map((key, index) => {
             return(
                 <Tabel key={key} kurs={key} data ={count.rates[key]}/> 
         )
