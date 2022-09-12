@@ -1,12 +1,8 @@
 import React from 'react';
-import { useEffect } from 'react';
 
 import TableRow from '../TableRow';
 
 const TableBody = ({ datas }) => {
-	useEffect(() => {
-		console.log('datas');
-	});
 	return (
 		<tbody>
 			{datas &&
