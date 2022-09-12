@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useApp } from "./App.hook";
 
 function App() {
+  const data = useApp();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <table>
+        <thead>
+          <tr>
+            <th>Currency</th>
+            <th>We Buy</th>
+            <th>Exchange Rate</th>
+            <th>We Sell</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.keys(data).map((key) => {
+            return (
+              <tr key={key}>
+                <td>{key.toUpperCase()}</td>
+                <td>{((data[key] * 105) / 100).toFixed(4)}</td>
+                <td>{Number(data[key]).toFixed(6)}</td>
+                <td>{((data[key] * 95) / 100).toFixed(4)}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      <br />
+      <p>
+        Rates are based from 1 USD.
+        <br />
+        This application uses API from https://currencyfreaks.com
+      </p>
     </div>
   );
 }
