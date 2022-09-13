@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.content{
+    width: 100%;
+    height: 100vh;
+    background-color: #dc7000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #E8E6E3;
+    flex-direction: column;
+    .header{
+        font-weight: bold;
+    }
+    table{
+        text-align: center;
+        font-size: 21px;
+    }
+}
+.footer{
+    text-align: center;
+    margin-top: 30px;
+}
