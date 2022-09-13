@@ -1,4 +1,5 @@
 import { CurrencyList } from './components/CurrencyList/CurrencyList';
+import { CurrencyMsg } from './components/CurrencyMsg/CurrencyMsg';
 import './App.css';
 
 function App() {
@@ -7,6 +8,9 @@ function App() {
       <div className="container">
         <div className="container table__container">
           <CurrencyList />
+        </div>
+        <div className="container message__container">
+          <CurrencyMsg />
         </div>
       </div>
     </div>

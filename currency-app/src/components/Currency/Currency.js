@@ -1,12 +1,10 @@
-const Currency = ({ curr, excRate }) => {
+export const Currency = ({ curr, excRate, idx }) => {
     return (
-        <tr>
+        <tr key={`${curr}-${idx}`}>
             <td>{curr}</td>
-            <td>weBuy</td>
-            <td>{excRate}</td>
-            <td>weSell</td>
+            <td>{(excRate * 1.05).toFixed(5)}</td>
+            <td>{excRate.toFixed(5)}</td>
+            <td>{(excRate * 0.95).toFixed(5)}</td>
         </tr>
     );
 }
-
-export default Currency;
