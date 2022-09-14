@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Table from "./components/Table";
+import { useApp } from "./hooks/App.hook";
 
 function App() {
+  const { data, loading, error } = useApp();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {loading && <div style={{fontSize: "20px"}}>A moment please...</div>}
+      {error && (<div>{`There is a problem fetching the post data - ${error}`}</div>)}
+      <Table data={data} />
+      <br />
+      <p>
+        Rates are based from 1 USD.
+        <br />
+        This application uses API from https://currencyfreaks.com
+      </p>
     </div>
   );
 }
