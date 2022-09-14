@@ -1,17 +1,13 @@
-import { useApp } from "../hooks/App.hook";
-
-function TableRow() {
-  const data = useApp();
-
+function TableRow(props) {
   return (
     <tbody>
-      {Object.keys(data).map((key) => {
+      {props.data && Object.keys(props.data).map((key) => {
         return (
           <tr key={key}>
             <td>{key.toUpperCase()}</td>
-            <td>{((data[key] * 105) / 100).toFixed(4)}</td>
-            <td>{Number(data[key]).toFixed(6)}</td>
-            <td>{((data[key] * 95) / 100).toFixed(4)}</td>
+            <td>{((props.data[key] * 105) / 100).toFixed(4)}</td>
+            <td>{Number(props.data[key]).toFixed(6)}</td>
+            <td>{((props.data[key] * 95) / 100).toFixed(4)}</td>
           </tr>
         );
       })}

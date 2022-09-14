@@ -1,11 +1,11 @@
 import TableHead from "./TableHead";
 import TableRow from "./TableRow";
 
-function Table() {
+function Table(props) {
   return (
     <table>
       <TableHead />
-      <TableRow />
+      <TableRow data={props.data} />
     </table>
   );
 }
