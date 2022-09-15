@@ -3,13 +3,6 @@ import axios from 'axios';
 function Result(props) {
     const [data, setData] = useState([])
 
-    // let data = 123;
-    function ubah() {
-        // data = 6790;
-        setData(6790);
-        console.log(data);
-    }
-
     const apiKey = '3eb14eb35cf146998f500aa65756efc2'
     useEffect(()=>{
         async function fetchData() {
@@ -63,6 +56,8 @@ function Result(props) {
             })
         }
         </table>
+        <p>Rates are based from 1 USD</p>
+        <p>This application uses API from https://currencyfreaks.com</p>
     </div>
   )
 }
