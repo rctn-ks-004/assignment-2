@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from '../../logo.svg'
+import React from 'react'
 
-function App() {
+function Logo(props) {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+        <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -15,11 +15,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Hello {props.name}
         </a>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default Logo

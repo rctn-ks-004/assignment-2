@@ -1,11 +1,36 @@
 .App {
   text-align: center;
+  height: 100vh;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
+.tabel {
+  justify-content: center;
+}
+
+body {
+  background-color: #e07404;
+}
+
+p {
+  color: aliceblue;
+  font-size: 12px;
+}
+
+table {
+  margin: 100px auto;
+  padding-top: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: aliceblue;
+  width: 40%;
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
