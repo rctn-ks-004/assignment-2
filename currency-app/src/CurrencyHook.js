@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import axios from 'axios'
+import axios from 'axios';
+import Currency from './Currency';
 
 function currencyHook() {
     const [data, setData] = useState();
@@ -33,4 +34,10 @@ function currencyHook() {
        fetchData()
     },[])
 
+    return {
+        data
+    }
+
 }
+
+export default CurrencyHook;
