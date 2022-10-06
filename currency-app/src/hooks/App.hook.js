@@ -7,7 +7,7 @@ export const useApp = () => {
 
   useEffect(() => {
     fetch(
-      "https://api.currencyfreaks.com/latest?apikey=c1da0777fe9b4876ba85f585e5201b4f"
+      "https://api.currencyfreaks.com/latest?apikey=9cda9b4f201349dea5d66574605f1402"
     )
       // .then((res) => console.log(res))
       .then((res) => {
