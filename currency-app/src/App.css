@@ -1,7 +1,28 @@
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+* {
+  background: #dc7000;
+  color: white;
+  font-size: 14pt;
+}
+table {
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table,
+td,
+th {
+  border: 1px solid none;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 0px 3px;
+  width: 150px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
 }
